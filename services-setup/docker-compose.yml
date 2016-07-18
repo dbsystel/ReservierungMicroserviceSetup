@@ -1,0 +1,26 @@
+version: '2'
+services:
+  bookingservice:
+    image: bachelorproject/bookingservice:latest
+    restart: "unless-stopped"
+  customermanagementservice:
+    image: bachelorproject/customermanagementservice:latest
+    restart: "unless-stopped"
+  seatmanagementservice:
+    image: bachelorproject/seatmanagementservice:latest
+    restart: "unless-stopped"
+  pricingservice:
+    image: bachelorproject/pricingservice:latest
+    restart: "unless-stopped"
+  seatoverviewservice:
+    image: bachelorproject/seatoverviewservice:latest
+    restart: "unless-stopped"
+  ui:
+    image: bachelorproject/msi
+    restart: "unless-stopped"
+    ports:
+    - "3000:3000"
+networks:
+  default:
+    external:
+       name: reservierung

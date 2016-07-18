@@ -1,0 +1,50 @@
+version: '2'
+services:
+  cassandraroot:
+    image: cassandra
+    container_name: cassandraroot
+    ports:
+    - 7000
+    restart: "unless-stopped"
+  seat_database:
+    image: mysql
+    environment:
+    - MYSQL_ROOT_PASSWORD=root
+    container_name: seat_database
+    restart: "unless-stopped"
+  customer_database:
+    image: mysql
+    environment:
+    - MYSQL_ROOT_PASSWORD=root
+    container_name: customer_database
+    restart: "unless-stopped"
+  redis_main_locks:
+    image: redis
+    container_name: redis_main_locks
+    restart: "unless-stopped"
+  redis_ttl_locks:
+    image: redis
+    restart: "unless-stopped"
+    container_name: redis_ttl_locks
+  redis_pricing:
+    image: redis
+    restart: "unless-stopped"
+    container_name: redis_pricing
+  rabbitroot:
+    image: bachelorproject/rabbitcluster:latest
+    hostname: rabbitroot
+    restart: "unless-stopped"
+    ports:
+    - "15672:15672"
+  redis_main_guards:
+    image: redis
+    restart: "unless-stopped"
+    container_name: redis_main_guards
+  redis_ttl_guards:
+    image: redis
+    restart: "unless-stopped"
+    container_name: redis_ttl_guards
+networks:
+  default:
+    external:
+       name: reservierung
