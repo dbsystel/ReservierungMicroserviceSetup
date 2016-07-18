@@ -4,13 +4,9 @@ Gemeinsames Projekt zwischen DB Systel und Hasso-Plattner-Institut zur Implement
 Anleitung zum Aufsetzen auf mehreren Amazon Web Services-Instanzen:
 
 1. Mehrere Instanzen aufsetzen 
-2. Eine Instanz als Basis vor Etcd und Consul wählen (--> IP Adresse merken <backend-ip>)
+2. Eine Instanz als Basis vor Etcd und Consul wählen (--> IP Adresse merken <backend-ip>): Consul und Etcd sind das Backend für die Erstellung von Docker Swarm und ein Overlay-Netzwerk
 
-Consul und Etcd sind das Backend für die Erstellung von Docker Swarm und ein Overlay-Netzwerk
-
-3. Auf jeder Instanz ausführen:
-
-./init.sh <backend-ip>
+3. Auf jeder Instanz ausführen: ./init.sh <backend-ip>
 
 4. Auf der Backend-Instanz: ./etcd.sh 
 
