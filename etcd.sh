@@ -19,6 +19,7 @@ respawn
 script
 chdir /var/etcd
 exec /usr/local/bin/etcd -name node1 -listen-peer-urls http://0.0.0.0:2380 -listen-client-urls http://0.0.0.0:2379,http://127.0.0.1:4001 -initial-advertise-peer-urls http://$ADVERTISE_ADDRESS:2380 -initial-cluster node1=http://$ADVERTISE_ADDRESS:2380 -initial-cluster-state new -initial-cluster-token etcd-cluster -advertise-client-urls http://$ADVERTISE_ADDRESS:2379 >>/var/log/etcd.log 2>&1
+end script
 EOF
 
 sudo cp etcd.conf /etc/init/etcd.conf
