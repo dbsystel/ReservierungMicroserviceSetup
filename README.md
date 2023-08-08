@@ -1,5 +1,8 @@
 # MicroserviceReservierung
 ===============
+
+> 💡 Dieses Repository ist das Ergebnis einer Zusammenarbeit mit dem HPI im Rahmen einer Bachelorarbeit aus dem Jahre 2016. Ziel war es, eine prototypische Microservicearchitektur zu entwickeln. **Das Projekt wurde planmäßig nach Abschluss der Arbeit beendet.**
+
 Dies ist ein gemeinsames Projekt zwischen DB Systel und Hasso-Plattner-Institut zur Implementierung eines Protoypen für die Sitzplatzreservierung auf Basis von Microservices
 
 Anleitung zum Aufsetzen auf mehreren Amazon Web Services-Instanzen
